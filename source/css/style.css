@@ -1,0 +1,434 @@
+* {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #F8F8F8;
+	font-family: 'Lato', sans-serif;
+}
+
+.con {
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.cen-vertical {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/*header----------------------*/
+header {
+	height: 64px;
+	border-bottom: 0.2px solid #707070;
+}
+
+.header-logo {
+	display: inline-block;
+}
+
+.header-logo img {
+	width: 40px;
+	vertical-align: bottom;
+}
+
+.header-list {
+	float: right;
+}
+
+.header-list:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.header-list li {
+	float: left;
+	margin: 0 20px;
+}
+
+.header-list li:hover a {
+	opacity: 1;
+}
+
+.header-list a {
+	color: #0C0C0C;
+	text-transform: capitalize;
+	opacity: 0.5;
+	font-weight: 400;
+	transition: all .2s ease-in-out;
+}
+
+.header-list .active {
+	opacity: 1;
+	font-weight: 700;
+}
+
+
+/*section-search----------------------*/
+.sec-search {
+	height: 160px;
+}
+
+.search {
+	float: left;
+	width: 40%;
+	position: relative;
+	border-bottom: 1px solid #707070;
+	top: 60px;
+}
+
+.search-under {
+	content: "";
+	display: block;
+	height: 1.5px;
+	background-color: black;
+	width: 0;
+	/*	width: 100%;*/
+	transition: all .4s ease-in-out;
+}
+
+
+#search-txt {
+	border: none;
+	width: 100%;
+	height: 40px;
+	background-color: transparent;
+
+	padding-left: 8px;
+	font-size: 1em;
+}
+
+#search-txt:focus {
+	outline-width: 0;
+}
+
+#search-txt:focus ~ .search-under {
+	width: 100%;
+}
+
+#search-btn {
+	width: 24px;
+	position: absolute;
+	right: 0;
+	bottom: 50%;
+
+	transform: translate(0, 50%);
+}
+
+#search-btn:focus {
+	outline-width: 0;
+}
+
+.add {
+	float: right;
+	width: 50px;
+	height: 50px;
+	position: relative;
+	top: 50px;
+	border-radius: 100%;
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	transition: all .5s ease-in-out;
+}
+
+#add-icon {
+	width: 60px;
+	transition: all .3s ease-in-out;
+}
+
+.add:hover{
+	
+}
+
+.add:hover #add-icon {
+	width: 30px;
+	transform: rotate(90deg);
+}
+
+/*section-list----------------------*/
+.sec-list .con>li{
+	width: 25%;
+	height: 240px;
+	padding: 12px;
+	cursor: pointer;
+	float: left;
+}
+
+.list-sum{
+	width: 100%;
+	height: 100%;
+/*	padding: 10px;*/
+	position: relative;
+	
+/*	background-image: url(../img/sum_test03.jpeg);*/
+	background-position: center;
+	background-size: cover;
+	
+	background-image: url(../img/sum_test03.jpeg);
+	border-radius: 10px;
+	
+	transition: all .2s ease-in-out;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+	overflow: hidden;
+}
+
+.list-sum:before{
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	
+	transition: all .2s ease-in-out;
+	background: linear-gradient(transparent, rgba(0,0,0,0.9));
+	transform: translate(0,10%);
+	border-radius: 10px;
+}
+
+.list-label:before{
+	content: "";
+	width: 24px;
+	height: 24px;
+	background-color: #FC5E5D;
+	border-radius: 100%;
+	float: left;
+}
+
+.list-label:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.list-label{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	color: black;
+}
+
+.list-label li{
+	float: left;
+	
+	height: 24px;
+	background-color: #FC5E5D;
+	border-radius: 12px;
+	padding: 0 10px;
+	color: white;
+	font-weight: 400;
+	margin: 0 4px;
+	font-size: 10pt;
+	line-height: 24px;
+	
+	opacity: 0;
+	transition: all .3s ease-in-out;
+}
+
+.txt-wrap{
+	position: absolute;
+	width: 100%;
+	bottom: 10px;
+	left: 0;
+	padding: 0 10px;
+	color: white;
+	
+	height: 60px;
+/*	border: 2px solid red;*/
+	transition: all .3s ease-in-out;
+	overflow: hidden;
+}
+
+.txt-wrap h3{
+	font-size: 14pt;
+	line-height: 2;
+	font-weight: 700;
+}
+
+.txt-wrap p{
+	font-size: 10pt;
+	font-weight: 400;
+	line-height: 2;
+	opacity: 0.8;
+}
+
+.list-sum:hover{
+	transform: translate(0, -5%);
+	box-shadow: 2px 8px 20px rgba(0,0,0,0.3);
+}
+.list-sum:hover .list-label li{
+	opacity: 1;
+}
+.list-sum:hover::before{
+	transform: translate(0, 0);
+}
+
+.list-sum:hover .txt-wrap{
+	height: 120px;
+}
+
+/*add popup-----------------------------------------*/
+.full-cover{
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100%;
+	background-color: rgba(0,0,0,0.7);
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: none;
+/*	opacity: 1;*/
+/*	opacity: 0;*/
+	
+	transition: all .2s ease-in-out;
+	
+}
+
+.popup{
+/*	display: none;*/
+	position: relative;
+	width: 40%;
+	height: 90%;
+	background-color: white;
+	padding: 32px 36px;
+}
+.popup h2{
+	line-height: 2;
+}
+.sumnail{
+	width: 100%;
+	height: 240px;
+	background: #F2F2F2;
+	border-radius: 10px;
+}
+
+.pop-cate{
+	margin: 12px 0;
+	position: relative;
+/*	left: 80px;*/
+}
+
+.pop-cate input{
+	display: none;
+}
+
+.pop-cate label{
+	height: 24px;
+	width: 24px;
+	font-size: 12pt;
+	line-height: 28px;
+	
+	display: inline-block;
+	position: relative;
+	
+	background: #000;
+	border-radius: 12px;
+	color: white;
+	transition: all .2s ease-in-out;
+}
+.pop-cate label:first-of-type{
+	margin-right: 0px;
+	background-color: #4F42E9;
+}
+.pop-cate label:last-of-type{
+	background-color: #FC5E5D;
+}
+
+.pop-cate label p{
+	opacity: 0;
+	font-size: 0.8em;
+	transition: all .2s ease-in-out;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-transform: capitalize;
+}
+
+input[name = "popCky"]:checked + label{
+	width: 80px;
+}
+
+input[name = "popCky"]:checked + label p{
+	opacity: 1;
+}
+
+.text-contents{
+	margin: 8px 0;
+}
+
+.text-contents:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.text-contents p{
+	float: left;
+	width: 20%;
+	color: #707070;
+	font-size: 1em;
+}
+.text-contents input{
+	float: right;
+	width: 75%;
+	height: 24px;
+	background-color: #F2F2F2;
+	border: none;
+	border-radius: 10px;
+	padding: 0 12px;
+}
+
+input:focus {
+	outline-width: 0;
+}
+
+#pop-descript{
+	float: right;
+	width: 75%;
+	height: 72px;
+	background-color: #F2F2F2;
+	border: none;
+	border-radius: 10px;
+	padding: 0 12px;
+}
+
+.pop-btn{
+	position: absolute;
+	right: 32px;
+	bottom: 32px
+}
+
+.pop-btn ul:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.pop-btn li{
+	font-family: 'NanumSquare', sans-serif;
+	font-weight: 800;
+	float: left;
+	font-size: 1em;
+	cursor: pointer;
+	opacity: 0.5;
+	transition: all .2s ease-in-out;
+}
+
+.pop-btn li:hover{
+	opacity: 1;
+}
+
+.pop-btn li:last-of-type{
+	margin-left: 16px;
+}
